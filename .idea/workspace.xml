@@ -22,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MakingArffFile.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MakingArffFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MakingArffFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -37,7 +37,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goToGymLarge.arff" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MachineLearning.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MachineLearning.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="goToGymLarge.arff" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/goToGymLarge.arff">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-169020">
@@ -106,6 +116,14 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="MachineLearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -473,14 +491,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/goToGymLarge.arff">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-169020">
-          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MakingArffFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -491,6 +501,22 @@
             <element signature="e#879#880#0" expanded="true" />
             <element signature="e#938#939#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goToGymLarge.arff">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169020">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

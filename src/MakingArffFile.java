@@ -127,7 +127,8 @@ public class MakingArffFile {
                 line.append(isSore(randoms[3]));
 
 
-                if (Math.random() <= percentGoingToGym) {
+                if (Math.random()+0.07 <= percentGoingToGym) {
+                    went++;
                     line.append("yes");
                 } else {
                     line.append("no");
@@ -138,7 +139,7 @@ public class MakingArffFile {
             }
 
             System.out.println("");
-            System.out.print("Percentage Attended Gym: " + went/10000.);
+            System.out.print("Percentage Attended Gym: " + went/10000.*100);
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");

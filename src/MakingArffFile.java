@@ -6,37 +6,38 @@ import java.io.*;
 public class MakingArffFile {
 
     static double percentGoingToGym;
+    static double numberOfAttrs;
 
     public static String getDay(double random) {
+        numberOfAttrs++;
         if (random <= 2./7) {
-            percentGoingToGym += 0.7*Math.random()*0.40;
+            percentGoingToGym += 0.7;
             return "weekend, ";
         }       else if (random <= 4./7) {
-            percentGoingToGym += 0.95*Math.random()*0.40;
+            percentGoingToGym += 0.93;
             return "ttr, ";
         }       else {
-            percentGoingToGym += 0.85*Math.random()*0.40;
+            percentGoingToGym += 0.83;
             return "mwf, ";
         }
     }
 
     public static String getTemp(double random) {
         double tempRandom = random*2 - 1;
-        tempRandom = (tempRandom*40 + 60);
-
-        percentGoingToGym += random * 0.02;
+        int temperature = (int) (tempRandom*40 + 60);
 
         String isIcy = "FALSE, ";
 
         double icyRandom = Math.random();
-        if (tempRandom <= 32 && icyRandom < 0.2) {
+        if (temperature <= 32 && icyRandom < 0.15) {
             isIcy = "TRUE, ";
-            percentGoingToGym += 0.25 - Math.random()*0.22;
-        } else {
-            percentGoingToGym += 0.20 + 0.3*Math.random();
+            numberOfAttrs += 3;
         }
+//      } else {
+//            percentGoingToGym += 0.3 + 0.5*random;
+//        }
 
-        return ((int) tempRandom) + ", " + isIcy;
+        return (temperature) + ", " + isIcy;
     }
 
     public static double[] getRandoms() {
@@ -50,50 +51,24 @@ public class MakingArffFile {
 
     public static String isSick(double random) {
         if (random >= .985) {
-            percentGoingToGym += 0.3 - Math.random()*0.28;
+            numberOfAttrs += 12;
             return "TRUE, ";
         } else {
-            percentGoingToGym += 0.28 + Math.random()*0.02;
+//            percentGoingToGym += 0.35 - Math.random()*0.05;
             return "FALSE, ";
         }
     }
 
     public static String isSore(double random) {
         if (random >= 0.9) {
-            percentGoingToGym += 0.05 - Math.random()*0.04;
+            numberOfAttrs += 0.5;
+//            percentGoingToGym += (0.05 - (Math.random()*0.04));
             return "TRUE, ";
         } else {
-            percentGoingToGym += 0.04 + Math.random()*0.01;
+//            percentGoingToGym += 0.04 + Math.random()*0.01;
             return "FALSE, ";
         }
     }
-
-//    public static String isGoingToGym(double[] randoms) {
-//        double percentGoingToGym = 0.0;
-//        percentGoingToGym += randoms[0]*0.02;
-//
-//        if (randoms[1] <= 2./7)
-//            percentGoingToGym += 0.6*Math.random()*0.48;
-//        else if (randoms[1] <= 4./7)
-//            percentGoingToGym += 0.95*Math.random()*0.48;
-//        else
-//            percentGoingToGym += 0.8*Math.random()*0.48;
-//
-//        if (randoms[2] <= 0.985)
-//            percentGoingToGym += 0.3 - Math.random()*0.1;
-//        else
-//            percentGoingToGym +=  Math.random()*0.1;
-//
-//        if (randoms[3] <= .9)
-//            percentGoingToGym += 0.2 - Math.random()*0.05;
-//        else
-//            percentGoingToGym += Math.random()*0.195;
-//
-//        double temp = Math.random();
-//
-//        return temp < percentGoingToGym ? "yes" : "no";
-//
-//    }
 
     public static void main (String[] args) {
 
@@ -112,11 +87,11 @@ public class MakingArffFile {
 
             double[] randoms;
             StringBuffer line;
-            double goingToGym;
             int went = 0;
             for(int i = 0; i < 10000; i++) {
 
                 percentGoingToGym = 0.0;
+                numberOfAttrs = 0;
 
                 randoms = getRandoms();
 
@@ -127,7 +102,8 @@ public class MakingArffFile {
                 line.append(isSore(randoms[3]));
 
 
-                if (Math.random()+0.07 <= percentGoingToGym) {
+               // if (Math.random()+0.07 <= percentGoingToGym) {
+                if (Math.random() <= (percentGoingToGym/numberOfAttrs)) {
                     went++;
                     line.append("yes");
                 } else {

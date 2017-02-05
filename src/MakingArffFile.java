@@ -11,13 +11,13 @@ public class MakingArffFile {
     public static String getDay(double random) {
         numberOfAttrs++;
         if (random <= 2./7) {
-            percentGoingToGym += 0.7;
+            percentGoingToGym += 0.8;
             return "weekend, ";
         }       else if (random <= 4./7) {
-            percentGoingToGym += 0.93;
+            percentGoingToGym += 1;
             return "ttr, ";
         }       else {
-            percentGoingToGym += 0.83;
+            percentGoingToGym += 0.9;
             return "mwf, ";
         }
     }
@@ -61,7 +61,7 @@ public class MakingArffFile {
 
     public static String isSore(double random) {
         if (random >= 0.9) {
-            numberOfAttrs += 0.5;
+            numberOfAttrs += 0.33;
 //            percentGoingToGym += (0.05 - (Math.random()*0.04));
             return "TRUE, ";
         } else {
@@ -90,7 +90,7 @@ public class MakingArffFile {
             int went = 0;
             for(int i = 0; i < 10000; i++) {
 
-                percentGoingToGym = 0.0;
+                percentGoingToGym = -0.1;
                 numberOfAttrs = 0;
 
                 randoms = getRandoms();
